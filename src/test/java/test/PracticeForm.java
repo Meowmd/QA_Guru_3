@@ -23,20 +23,20 @@ static void beforeAll() {
 @Test
     void successfulTest() {
      Selenide.open("/automation-practice-form");
-        Selenide.executeJavaScript("$('footer').remove()", new Object[0]);
-        Selenide.executeJavaScript("$('#fixedban').remove()", new Object[0]);
+        Selenide.executeJavaScript("$('footer').remove()");
+        Selenide.executeJavaScript("$('#fixedban').remove()");
         Selenide.$("#firstName").setValue("Mariya");
         Selenide.$("#lastName").setValue("Bykova");
         Selenide.$("#userEmail").setValue("bykova.m@gmail.com");
         Selenide.$(Selectors.byText("Female")).click();
         Selenide.$("#userNumber").setValue("9999999999");
         Selenide.$("#dateOfBirthInput").click();
-        Selenide.$(".react-datepicker__year-select").selectOption(new String[]{"1987"});
-        Selenide.$(".react-datepicker__month-select").selectOption(new String[]{"July"});
+        Selenide.$(".react-datepicker__year-select").selectOption("1987");
+        Selenide.$(".react-datepicker__month-select").selectOption("July");
         Selenide.$("[aria-label= 'Choose Wednesday, July 8th, 1987']").click();
         Selenide.$("#subjectsInput").setValue("Math").pressEnter();
         Selenide.$(Selectors.byText("Music")).click();
-        Selenide.$("#uploadPicture").uploadFromClasspath(new String[]{"Screenshot_1.png"});
+        Selenide.$("#uploadPicture").uploadFromClasspath("Screenshot_1.png");
         Selenide.$("#currentAddress").setValue("Lenina 20");
         Selenide.$("#react-select-3-input").setValue("NCR").pressEnter();
         Selenide.$("#react-select-4-input").setValue("Delhi").pressEnter();
